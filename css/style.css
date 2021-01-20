@@ -535,6 +535,7 @@ body {
   margin: 0 12px 1em;
 }
 .article-header {
+  text-align: center;
   padding: 20px 20px 0;
 }
 .article-title {
