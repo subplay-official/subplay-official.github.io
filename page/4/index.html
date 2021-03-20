@@ -47,10 +47,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Subplay验证人申请教程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Subplay项目介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/post/2a65dbc1" class="article-date">
-  <time class="dt-published" datetime="2021-03-11T06:37:45.000Z" itemprop="datePublished">2021-03-11</time>
+    <a href="/post/cec519b5" class="article-date">
+  <time class="dt-published" datetime="2021-02-12T03:12:34.000Z" itemprop="datePublished">2021-02-12</time>
 </a>
     
   </div>
@@ -61,7 +61,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/post/2a65dbc1">Subplay验证人节点申请教程</a>
+      <a class="p-name article-title" href="/post/cec519b5">Subplay介绍</a>
     </h1>
   
 
@@ -69,21 +69,33 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>&nbsp; </p>
-<h4 id="此篇教程所使用服务器为2核4g，Ubuntu20-04系统，经测试目前使用1核2g的服务器也能正常运行验证人节点。我们已经提供了编译好的文件，请勿自行编译否则可能遇到报错。此教程浏览器使用英文，你可以在设置，通用，默认接口语言中自己设定浏览器所使用的语言。"><a href="#此篇教程所使用服务器为2核4g，Ubuntu20-04系统，经测试目前使用1核2g的服务器也能正常运行验证人节点。我们已经提供了编译好的文件，请勿自行编译否则可能遇到报错。此教程浏览器使用英文，你可以在设置，通用，默认接口语言中自己设定浏览器所使用的语言。" class="headerlink" title="此篇教程所使用服务器为2核4g，Ubuntu20.04系统，经测试目前使用1核2g的服务器也能正常运行验证人节点。我们已经提供了编译好的文件，请勿自行编译否则可能遇到报错。此教程浏览器使用英文，你可以在设置，通用，默认接口语言中自己设定浏览器所使用的语言。"></a>此篇教程所使用服务器为2核4g，Ubuntu20.04系统，经测试目前使用1核2g的服务器也能正常运行验证人节点。我们已经提供了编译好的文件，请勿自行编译否则可能遇到报错。此教程浏览器使用英文，你可以在设置，通用，默认接口语言中自己设定浏览器所使用的语言。</h4><p>1，下载编译好的substrate文件。并赋予其执行权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth&#x3D;1 https:&#x2F;&#x2F;github.com&#x2F;substrate-subplay&#x2F;subplay</span><br><span class="line">cd subplay</span><br><span class="line">chmod a+rx .&#x2F;substrate</span><br></pre></td></tr></table></figure>
-<p>2，利用screen命令创建一个叫n1的新终端，此教程使用的系统自带screen命令，如你所使用的系统没有screen命令，请自行百度安装，简明使用方法可参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jimaojin/p/8593212.html">此篇教程</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S n1</span><br></pre></td></tr></table></figure>
-<p>3，在新终端中输入以下命令，启动验证人节点，如你已有相关经验，可自行配置port ws-port rpc-port等信息，name 一栏的“nodename”也请自行配置一个能与其它节点相区分的名称，如你的微信名对应的拼音，这样方便以后在<a target="_blank" rel="noopener" href="https://telemetry.polkadot.io/#list/Subplay">此链接</a>查询节点状况并给出验证人奖励</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;substrate \</span><br><span class="line">  --base-path &#x2F;tmp&#x2F;node01 \</span><br><span class="line">  --chain .&#x2F;customSpecRaw.json \</span><br><span class="line">  --port 10222 \</span><br><span class="line">  --ws-port 1244 \</span><br><span class="line">  --rpc-port 1233 \</span><br><span class="line">  --telemetry-url &#39;wss:&#x2F;&#x2F;telemetry.polkadot.io&#x2F;submit&#x2F; 0&#39; \</span><br><span class="line">  --validator \</span><br><span class="line">  --rpc-methods Unsafe \</span><br><span class="line">  --name nodename \</span><br><span class="line">  --bootnodes &#x2F;ip4&#x2F;45.64.112.47&#x2F;tcp&#x2F;39339&#x2F;p2p&#x2F;12D3KooWKqb5BZeRReJgCZXjzJ3i8qEAsaQzwXiAXeq4KToHNoBL</span><br></pre></td></tr></table></figure>
-<p>4，显示类似如下信息表示节点正在同步，请稍等几分钟。（如果此时链已经启动很久，则同步时间也会相应增加）<br><img src="https://i.loli.net/2021/03/11/SAigdGXvopVeFZC.png"><br>5，显示类似如下信息表示同步完成。按ctrl a+d 切换出此n1终端。<br><img src="https://i.loli.net/2021/03/11/KokU1TDaHwFN9lb.png"><br>6，输入以下命令获得如下rotatekey信息，保存result后面的字段。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -H &quot;Content-Type:application&#x2F;json&quot; -d &#39;&#123;&quot;id&quot;:1,&quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;method&quot;:&quot;author_rotateKeys&quot;, &quot;params&quot;:[]&#125;&#39; http:&#x2F;&#x2F;localhost:1233</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/03/11/GVCIDUzQpTHWEm8.png"><br>7，进入<a target="_blank" rel="noopener" href="https://app.subplay.xyz/">https://app.subplay.xyz</a> 创建两个账号，且此两个账号需存有一定数量的PLAY币。如图所示这次教程中我创建了两个账号N4STA和N4CON，创建账号教程<a href="www.baidu.com">请点此处</a>。<br><img src="https://i.loli.net/2021/03/11/DVfZBGyr4gwE8pU.png"><br>8，依次点击Network，Staking。<br><img src="https://i.loli.net/2021/03/11/pcnUNjZvIEWbu3e.png"><br>9，再点击Account actions，Validator<br><img src="https://i.loli.net/2021/03/11/DSJCwObnfg6k2x7.png"><br>10，在新出窗口中stash account中粘贴进你的stash账号（存储账号，主要用于存储资金，对安全程度要求高，最好使用冷钱包，冷钱包创建的教程以后再发布），和你的controller账号（控制账号，主要用于执行各种操作，尽量少存放资金在此账号）。然后输入value bonded数量，具体绑定数额可自己设定，但至少要留出10000以上PLAY不绑定，用于以后各种操作的手续费。<br><img src="https://i.loli.net/2021/03/11/OxcvzT1ViCE7yj9.png"><br>11，在key from rotatekeys处粘贴进第6步保存的信息。下方填写你作为验证人设定收获奖励的百分比。比如你将数值设为20，则总奖励的20%将由你获得，剩下80%奖励将由为你投票的人按质押数量按比例分配。建议将此值设置为50。<br><img src="https://i.loli.net/2021/03/11/SlN6JpRrcaAE1iu.png"><br>12，输入密码并确定。<br><img src="https://i.loli.net/2021/03/11/7gCHjwzI8eFJ5BP.png"><br>13，此后在account actions一栏你将可以看到你的账号作为节点的信息。<br><img src="https://i.loli.net/2021/03/11/y5hDTjLYOqMlRkv.png"><br>14，此时在staking overview一栏可以看到waitting这里至少会显示1，当右侧era的时间结束后，你将会成为新的出块验证人，那时validators下方将由6/8变为7/8。如果你在申请验证人时validtors下方已满（如8/8，20/20等），则在era结束后你不一定能成为出块验证人，此时需要考虑所有验证人的投票数量来决定。<br><img src="https://i.loli.net/2021/03/11/XIQt2eMJd4g3pvh.png"></p>
+        <p><a target="_blank" rel="noopener" href="https://blog.subplay.xyz/post/2f5eb528">Click here to read project introduction in English</a></p>
+<p>目前Subplay链已经正式开启。虽然之前我们已在此博客发布过<a target="_blank" rel="noopener" href="https://blog.subplay.xyz/post/d663e825">Subplay发展计划</a>，但该计划是针对PLAY初期持有者的。对于未参加PLAY初始发行但又对Subplay感兴趣的朋友。只看该发展计划并不能详细了解整个项目的来龙去脉。所以我们发布此篇博客用于详细介绍Subplay。由于篇幅较长，如你只想大致了解此项目，可只看下方黑色字段内的总结性内容。如你想深入了解此项目，可多花些时间看完全文。如有任何疑问可加微信peilin567进Subplay交流群咨询。</p>
+<p><strong><font color="black">Subplay是由一个币圈匿名开发者AP倡议开启。发币方式公开公平透明的基于Substrate（波卡生态框架技术）的区块链项目。链的主token名为PLAY，初始总量为13亿，初始总市值（即所有初始投资人的投资总和）约为仅100-200万元，拥有约200个初始投资人/用户。</strong></p>
+<p><strong>此项目较为特殊，没有传统的项目方，由所有持币人投票通过发展计划而设立了用于项目发展的基金。在短期内此项目不会设立长远的具体计划，从而可以快速的低成本试错，找到最适合项目的发展方向和方式。此外，项目的发起人AP也可能在此项目各项基础设施完善后加入并部署一个大型的创新型应用。考虑到AP曾在币圈做出过如eth免费空投和eos cpu挖矿等极富创造力的应用。该大型应用以及可能搭载该应用的Subplay链都可能具有很大潜力。</strong></p>
+<p><strong>而即使不考虑AP的加入，考虑到Subplay的独特性和超低的起点，它仍具有不错的发展空间。同时也正因为他的独特性和超低的起点，也让它具有一定的风险，所以这是一个高风险高回报的项目。但总的来说我们认为至少在初期，此项目的投资收益数学期望为正，且可能远大于目前主流的各类项目。所以我们很真诚且谦卑的认为这是一个值得轻仓投资的项目。</strong></p>
+<p><strong>目前Subplay正处于POA阶段（proof of authority，可以理解为试运行阶段），在此期间验证人节点不多，链并不百分之百稳定及去中心化，因此我们暂时不提供交易渠道。当链转为POS（proof of stake）阶段后，我们会提供多种方式的交易渠道，之后在合适的时期尝试上架各种交易所。</strong><br></font> </p>
+<h4 id="1，项目发起原因"><a href="#1，项目发起原因" class="headerlink" title="1，项目发起原因"></a>1，项目发起原因</h4><p>Subplay是币圈匿名开发者Aiden Pearce（以下简称AP）倡议发起。当时他正活跃在一个叫YAS的eosio链，而此时YAS的发展遇到些问题，比如一些超级节点虽然每天拿着节点收益，但却不能正常出块，影响到网络健康。eosio系统对这种不作为的节点没有任何惩罚措施，相反如波卡等基于Substrate系统的公链会对这些不作为的验证人（相当于eosio的超级节点），以及为这些验证人投票的提名人做出惩罚，从而使得整个网络保持健康。除了这个特性以外，substrate还有很多令人眼前一亮的优点，这里就暂不一一介绍了。AP因为这些优点而很看好Substrate，所以在YAS中创建了一个总量10亿，叫做PLAY的token，用于在之后开启一条Substrate链。初始计划中这个链的链名和主代币名都为PLAY，但为了让该项目更好的被推广，经过项目发展计划投票，链名被确定为Subplay，而代币名仍为PLAY。具体情况可参考文末附图1-5 。</p>
+<h4 id="2，初始代币分发规则"><a href="#2，初始代币分发规则" class="headerlink" title="2，初始代币分发规则"></a>2，初始代币分发规则</h4><p>PLAY的分发很有创新性，在YAS中AP开发了一个名为CODEX的，即community owned DEX的系统。具体模式较复杂，可以简单把它理解为跟uniswap一样。在这个系统中设置有一个PLAY/CPM交易对（CPM为另一个在YAS中发行的代币）。10亿PLAY被设置为每半分钟向此交易对转账1万PLAY用于购买CPM，然后自动将购得的CPM销毁。而想购买PLAY的用户可以将持有的任何代币转向此CODEX。如果该代币就是CPM，则直接用CPM在PLAY/CPM交易对中购得PLAY。如果该代币不是CPM，则可通过级联交易，将其它代币先转为CPM进而再自动购得PLAY。整个分发过程就像一个持续不断的逆向拍卖，如果长时间没人购买PLAY，则PLAY价格会因为有智能合约不断卖出而持续下跌，直到有人觉得价格合适，花费其它代币来购买PLAY，从而让价格上涨，然后不断循环，直到10亿代币被全部发出。<strong>整个过程持续了约35天，一切透明公开，所有人都需要花真金白银公平的获得这10亿PLAY，所以这个项目是没有传统意义的项目方的。</strong>这么做主要是因为之前AP参与的如YAS等项目因为币价下跌，而被很多持有者抱怨，谩骂。所以他干脆发行这样一个没有项目方的币，取名就叫做PLAY。他只是倡议发起这个项目，但对此项目不负有任何责任，任何人都是自由选择是否购买PLAY，没人有理由抱怨他。当然他以后也可以选择在这条自己倡议发起的链上进行开发。</p>
+<p>在原计划中，此条链将由AP牵头启动，他也确实多次开启测试链进行测试，但迟迟没有开启正式链。主要应该是因为开启面对市场的正式链需要做的工作要远远多于测试链。仅仅一个人来做的话是非常费时费力的事。所以为了让项目尽快上线，笔者作为一个普通社区成员牵头启动了这个项目，具体细节可参考此<a target="_blank" rel="noopener" href="https://www.weibo.com/ttarticle/p/show?id=2309404590818374582447">启动计划</a>，最终约有200个账户参与了映射，<a target="_blank" rel="noopener" href="https://bloks.io/account/swap2222play">可点此查看</a>。（因为每次映射需消耗1万PLAY币，所以应该不存在刷账户现象，即Subplay的初始真实用户约有200人）。之后所有持有者决定投票执行<a target="_blank" rel="noopener" href="https://blog.subplay.xyz/post/d663e825">发展计划</a>，主要内容为给项目增发一部分token用于项目的发展和对项目贡献者的奖励，所以最终初始PLAY代币总量被设定为13亿。</p>
+<h4 id="3，项目倡议人AP的介绍，以及他是否会加入Subplay开发"><a href="#3，项目倡议人AP的介绍，以及他是否会加入Subplay开发" class="headerlink" title="3，项目倡议人AP的介绍，以及他是否会加入Subplay开发"></a>3，项目倡议人AP的介绍，以及他是否会加入Subplay开发</h4><p>提到AP这个名字，可能币圈知道的人并不多。但提到18年的以太坊免费空投，以及19年的eos cpu挖矿，可能很少有币圈朋友不知道，这两件事都曾在币圈引起不小轰动。从这两种发币方式就能看出AP至少拥有不错的技术能力以及强大的创造力。而除这两个比较有影响力的事件外，他还做出过很多极有意义的成果，只是了解的人并不多。<strong>比如他在YAS上搞出过类似uniswap的CODEX，有人黑他说他的这个CODEX是抄袭的uniswap。然而事实上在ENU时期（18年以太坊免费空投启动的项目），他就用uniswap所依靠的amm技术开发出了enu/btc交易对。而那个时候uniswap还没有上线，所以根本不可能是他抄袭了uniswap。</strong> 另外如去年曾经流行过一段时间的Vitalik推荐的UBI项目。我大概了解了一下，其实基本思路也跟AP在ENU时想搞UBI而设计出来的一个方案一样。都是基于信任链条来判断一个网络中的账号是否对应现实中的真实唯一的人。可以说很可能这个UBI项目是借鉴了AP当初的想法。</p>
+<p>当然这些项目都没获得一般意义上的成功（即币价大涨，让初期投资者赚到很多）。我觉得原因是多方面的，一个原因是因为AP只是一个人，他的精力毕竟有限。他只有精力开发出一个创意的核心方面，还需要更多人的开发和推广工作才可能把一个项目做成功。如果当年ENU的大庄们能目光长远点意识到AP在ENU上搞的amm的意义而帮助他做些前端之类的辅助开发和推广，而不是只想着搞套路割韭菜。那么现在ENU可能就是类似uniswap的存在了。另一个原因是AP平常不太屑于做一些放下身段的事来让项目“成功”。比如如果他愿意放下身段去劝说Vitalik来给他的UBI项目点赞宣传下，那赚到钱的UBI项目也许就是他的而不是那个后来借鉴他的UBI项目了。</p>
+<p>以上这些只是说明AP是一个很有技术能力、创造力的开发者。不代表他今后一定会在Subplay上进行开发，因为他本身并不是Subplay的项目方，不对开发这个项目负有责任。但我们认为他大概率会来开发，因为这毕竟就是他自己倡议发起的链，而且他自己也看好Substrate和波卡生态。并且我们跟他沟通时，他也透露过自己有一个大型项目正在开发，只是目前还不愿意透露项目细节，而且也未确定将在什么平台上线此项目（可参考文末附图6-8）。但我想如果Subplay能发展得不错，他是非常愿意将这个项目部署在这条本就是自己发起的链上的。（你可能会觉得AP是在吹牛或者搞忽悠，但就长期和他的接触来看，虽然他有时会根据实际情况改变计划，但却从没有做过虚假宣传或虚假承诺之类的事，所以这个项目应该是确实存在的。就像他曾跟笔者沟通时说过他会开启一种新型的公平的发币方式，之后不久就开启了eos cpu挖矿)</p>
+<h4 id="4，Subplay有无白皮书或者长远的项目规划"><a href="#4，Subplay有无白皮书或者长远的项目规划" class="headerlink" title="4，Subplay有无白皮书或者长远的项目规划"></a>4，Subplay有无白皮书或者长远的项目规划</h4><p>短期内Subplay不会有白皮书，也不会有长远的项目规划。因为这个项目很特殊，没有传统意义的项目方，初始市值也很低，我们没有足够资金招募到大量的全职开发者。我们不希望像以前的很多币圈项目一样胡乱给投资者画大饼，最后却实现不了目标。所以我们目前的计划仅仅是先完善Subplay的基础设施，然后尽可能多的吸引更多用户加入到此项目。如果之后AP愿意加入开发，并部署之前所说的大型项目，那么我们就可以根据该项目来设定今后的计划。如果AP短期内不加入开发，则我们会具体情况具体处理。比如我们会积极联系Substrate的相关开发者，和他们达成合作，让今后可能流行的相关应用部署到Subplay上，简单来说就是见风使舵。<strong>从这点来看，没有白皮书反而可能比有白皮书更有利。因为这样我们不用非得一条道走到黑，可以快速低成本试错，找到适合我们项目发展的方式，进而更可能让项目成功。</strong>而如果这个项目能发展壮大，我们今后也可以吸引到各方面的大佬来促进这个项目，做好白皮书以及长远的项目规划，像其它大型项目一样发展。</p>
+<h4 id="5，是否值得投资？"><a href="#5，是否值得投资？" class="headerlink" title="5，是否值得投资？"></a>5，是否值得投资？</h4><p>很多人可能会有疑虑，Subplay市值这么低,怎么和那些拥有豪华团队的大型波卡生态项目竞争？&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们认为波卡生态是一个整体，不同项目可以通过波卡这个中继链互相沟通，共同促进波卡生态的发展，所以波卡生态的不同项目之间相互促进的关系会远大于相互竞争的关系。<strong>另外我们本身也是个很谦卑的项目，不会妄想跟大型项目竞争，而是会尝试和大型项目合作。</strong>比如在Subplay还不足以拍得波卡插槽时，我们可以通过其它跨链技术让PLAY代币能够转移到获得了插槽的波卡平行链上，这样就可以让PLAY在未成为波卡平行链前就能在波卡生态中进行交易。就好像体量很小的牙签鸟可以和体量很大的河马合作，双方都从合作中获益。</p>
+<p>其次，<strong>正是因为Subplay的市值很低，才让他有巨大的升值潜力。</strong>例如虽然微软是一个巨型公司，拥有雄厚的资本和大量的人才。但它却很难再有大量的涨幅，一年内能有20%的涨幅就得谢天谢地了。相反，如果经过各方面努力，我们成功在Subplay上部署了一些有用的应用并增加了一定的用户数。那时候也许仍是只有一千多万总市值的小项目，跟其它大型项目仍不能比。但对投资者来说，那时候也许就已经获得了几倍乃至十倍的回报。更合况如前文所述，AP有较大概率会在Subplay上部署一个大型应用。如果那样的话，我觉得超越一千万的总市值应该是很轻松的事。因为即使AP之前参与开发的ENU和YAS没有获得一般意义上的成功，但YAS也仍达到过3，4千万的总市值，ENU更是曾达到过3亿左右的总市值。</p>
+<p>而ENU和YAS都是基于EOS相同的系统，这两个项目没有成功的一大原因是EOS项目方的不负责任，只管生不管养，赚到了钱就不再认真的开发项目。如他们之前承诺的IBC（Inter Blockchain Communication）就迟迟没有上线。因此EOS目前属于半死不活的状态，所以位于EOS下游的需要利用EOS资源的ENU和YAS项目自然也很难成功。而波卡官方却是在非常努力的开发并推广波卡生态，因此波卡成功的可能性远远大于EOS，因此如果AP将他的项目部署在Subplay上，项目成功的概率也将大大提升，继而也能将Subplay市值提升到远大于YAS甚至ENU的程度。当然就算AP最后不在Subplay上开发，我们也可以通过各种手段让项目发展起来。<strong>若波卡能够如它的愿景那样实现web3.0，那作为早期就启动的波卡生态链之一，Subplay也大概率能在波卡生态的壮大过程中分得一杯羹。</strong></p>
+<p>当然以上都只是一些可能性的推断，不代表Subplay一定能成功，一定能让投资者赚到钱。我们能保证的是这个项目是公平公开透明的，我们做这个项目是想通过长期努力把项目搞好，让项目能真正的产生价值，然后让持有者合情合理的赚钱。<strong>所以如果你购买PLAY，我们不能保证你能100%赚到钱，但是你一定不会像买了做局山寨币那样产生被骗的非常不爽的感觉。</strong></p>
+<p>所以综上所述，Subplay拥有很大潜力，同时虽然它不是骗钱的山寨项目，由于它的特殊性，仍然还是具有一定风险。但综合来说，我们认为它至少在初期是一个投资数学期望为正且可能远高于目前主流加密货币的项目。所以如果你是个偏保守的投资者，可以轻仓买入PLAY，就当买了一注中奖率提升百倍、千倍的彩票。而如果你是个高风险偏好投资者，我们也建议你只用闲钱投资，不要加杠杆，最好只用半仓以下购买PLAY。半仓以上的资金仍然持有虽然很难再涨10倍以上，但风险也要小很多的主流加密货币。</p>
+<h4 id="6，怎么购买PLAY？"><a href="#6，怎么购买PLAY？" class="headerlink" title="6，怎么购买PLAY？"></a>6，怎么购买PLAY？</h4><p>目前Subplay正处于PoA阶段（可以理解为试运行阶段），在此期间验证人节点不多，链并不百分之百稳定及去中心化，因此我们暂时不提供PLAY交易渠道。当链转为PoS阶段后，我们会建立一个有担保人的场外交易群进行交易。同时，我们也会提供另一种匿名交易PLAY的方式。以后我们也会努力进入波卡生态进而轻松的在波卡生态中进行去中心化交易，并同样尝试上线尽可能多的主流中心化交易所。</p>
+<h4 id="7，关于域名"><a href="#7，关于域名" class="headerlink" title="7，关于域名"></a>7，关于域名</h4><p>目前我们使用subplay.xyz作为项目博客，浏览器，wss接口等的域名。但我们同时也持有subplay.org，subplay.io等更正式的域名，只是暂时因为一些原因无法使用。我们会在约一个月后将项目相关的各个域名更改为这些更正式的域名。</p>
+<p><img src="https://i.loli.net/2021/02/10/9RzNuPOM2QcT5Xk.png" alt="附图1-5"></p>
+<p><img src="https://i.loli.net/2021/02/10/6ZsyHm8YGTE7pXh.png" alt="附图6-8"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://substrate-subplay.github.io/post/2a65dbc1" data-id="ckmfsc6xj0001ukvn5if7aacs" data-title="Subplay验证人节点申请教程" class="article-share-link">Share</a>
+      <a data-url="https://substrate-subplay.github.io/post/cec519b5" data-id="ckmfsc6xl0002ukvn5xfhacrs" data-title="Subplay介绍" class="article-share-link">Share</a>
       
       
       
@@ -99,7 +111,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -110,13 +122,6 @@
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/navi/" rel="tag">navi</a></li></ul>
-    </div>
-  </div>
-
 
   
     
@@ -138,14 +143,6 @@
       <ul>
         
           <li>
-            <a href="/post/a4bb0ca7">Subplay导航</a>
-          </li>
-        
-          <li>
-            <a href="/post/fea3f9b7">&lt;span style=&#34;color:red!important&#34;&gt;  标题标题标题 &lt;/span&gt;</a>
-          </li>
-        
-          <li>
             <a href="/post/2f5eb528">Subplay Introduction</a>
           </li>
         
@@ -155,6 +152,14 @@
         
           <li>
             <a href="/post/128d8078">Subplay创建账号，导入账号，转账教程</a>
+          </li>
+        
+          <li>
+            <a href="/post/cec519b5">Subplay介绍</a>
+          </li>
+        
+          <li>
+            <a href="/post/efbf7ef2">Play/Subplay development plan vote</a>
           </li>
         
       </ul>
