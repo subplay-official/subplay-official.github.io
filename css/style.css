@@ -554,6 +554,7 @@ a.article-title:hover {
 }
 .article-entry {
   color: #f36;
+  font-weight: 500;
   padding: 0 20px;
 }
 .article-entry:before,
